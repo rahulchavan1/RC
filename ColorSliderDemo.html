@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<p>Colour Slider : </p>
+RED :	<input id = "red" type="range" min="0" max="255" value="50" onchange="changeBackground()"><br>
+BLUE :	<input id = "green" type="range" min="0" max="255" value="50" onchange="changeBackground()"><br>
+GREEN :	<input id = "blue" type="range" min="0" max="255" value="50" onchange="changeBackground()">
+
+<div id ="demo" style = "height:300px; width:300px;">
+<p id = "r">
+<p id = "g">
+<p id = "b">
+</div>
+
+<script>
+function changeBackground()
+{
+	var red = parseInt(document.getElementById('red').value, 10);
+	var green = parseInt(document.getElementById('green').value, 10);
+	var blue = parseInt(document.getElementById('blue').value, 10);
+	document.getElementById('demo').style.backgroundColor = 'rgb('+red+', '+green+', '+blue+')';
+	document.getElementById('r').innerHTML = "Red : "+red;
+	document.getElementById('g').innerHTML = "Green : "+green;
+	document.getElementById('b').innerHTML = "Blue :"+blue;
+}
+</script>
+</body>
+</html>
