@@ -33,19 +33,6 @@
         document.getElementById("userTable").style.display = 'none';
         document.getElementById("id").value=id;
     }
-    function deleteUser(id){
-        fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
-    	method: 'DELETE'   
-        })
-        EmpDetails.shift();
-        window.alert("Record Deleted Successfully")
-        Listitr(EmpDetails);
-    }
-    function cancel(){
-        document.getElementById("editDiv").style.display = 'none';
-        document.getElementById("userTable").style.display = 'block';
-        Listitr(EmpDetails);
-    }
     function editUser(){
         var id = document.getElementById("id").value; 
         var obj2 = {name: document.getElementById("company").value};
@@ -58,7 +45,7 @@
         }
         EmpDetails[id-1] = obj; 
         console.log(EmpDetails);
-        cancel();
+        reload();
         fetch(`https://jsonplaceholder.typicode.com/users/${id}`,{
             method:`PUT`,
             body: JSON.stringify(obj)
@@ -66,3 +53,17 @@
         .then(response=>response.json)
         .then(json=>console.log(json))
     }
+    function deleteUser(id){
+        fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
+    	method: 'DELETE'   
+        })
+        EmpDetails.shift();
+        window.alert("Record Deleted Successfully")
+        Listitr(EmpDetails);
+    }
+    function reload(){
+        document.getElementById("editDiv").style.display = 'none';
+        document.getElementById("userTable").style.display = 'block';
+        Listitr(EmpDetails);
+    }
+    
