@@ -1,0 +1,57 @@
+table, td,th{
+    border: solid 1px black;
+}
+thead{
+    
+    color: white;
+}
+table{
+    background-color: rgb(41, 37, 37);
+    color:white;;
+    margin:auto;
+    width: 100%;
+}
+#edit-btn{
+    background-color: seagreen;
+    color: white;
+    border: none;
+    border-radius: 10%;
+    width: 70px;
+}
+
+#delete-btn{
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 10%;
+    width: auto;
+    
+}
+
+#editDiv{
+    display: none;
+    height: auto;
+    width: 250px;
+    background-color: rgb(125, 125, 128);
+    color: darkblue;
+    margin: auto;
+    margin-top: 2px;
+    border: solid 1px black;
+    padding: 20px;
+    grid-template-columns: 70px 100px;
+    position:absolute;
+    top:100px;
+    left:40%;
+}
+#editForm{
+    display : grid;
+    margin: 40px;
+}
+#msg{
+    display:none;
+    width:100%;
+    color:red;
+    text-size-adjust:20mm;
+}
+
+
